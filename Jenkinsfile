@@ -32,7 +32,7 @@ node{
     stage('Publish Test Reports'){
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
     }
-    
+/*    
     stage('Docker Image Build'){
         echo 'Creating Docker image'
         sh "docker build -t $dockerHubUser/$containerName:$tag --pull --no-cache ."
@@ -57,7 +57,9 @@ node{
 		sh "docker pull $dockerHubUser/$containerName:$tag"
 		sh "docker run -d --rm -p $httpPort:$httpPort --name $containerName $dockerHubUser/$containerName:$tag"
 		echo "Application started on port: ${httpPort} (http)"
+
 	}
+*/
 }
 
 
