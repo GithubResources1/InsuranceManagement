@@ -1,6 +1,6 @@
-resource "aws_security_group" "docker-sg" {
+resource "aws_security_group" "dockersg" {
 
-  name = "docker-sg"
+  name = "dockersg"
 
   ingress {
 
@@ -70,7 +70,7 @@ resource "aws_instance" "capstoneawsdocker" {
 
   instance_type = "t2.micro"
 
-  vpc_security_group_ids = [aws_security_group.docker-sg.id]
+  vpc_security_group_ids = [aws_security_group.dockersg.id]
 
   key_name      = aws_key_pair.sambo-key.key_name
 
