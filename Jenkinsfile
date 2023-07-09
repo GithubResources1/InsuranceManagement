@@ -8,8 +8,7 @@ node{
         mavenCMD = "/opt/apache-maven-3.9.3/bin/mvn"
         tag="3.0"
 	dockerHubUser="samarthrao"
-        dockerPassword='$riKrishna999'
-	containerName="insure-me"
+        containerName="insure-me"
 	httpPort="8081"
     }
     
