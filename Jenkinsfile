@@ -60,6 +60,12 @@ node{
 
 	}
 
+stage('Terraform steps')
+{
+ sh "cd /terraformdir"
+ sh "terraform initi"
+ sh "terraform apply -auto-approve"
+}
 }
 
 

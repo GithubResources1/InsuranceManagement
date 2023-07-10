@@ -14,6 +14,32 @@ resource "aws_security_group" "dockersg" {
 
   }
 
+ingress {
+
+    from_port   = 8084
+
+    to_port     = 8084
+
+    protocol    = "tcp"
+
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
+ingress {
+
+    from_port   = 8081
+
+    to_port     = 8081
+
+    protocol    = "tcp"
+
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
+
+
   ingress {
 
     from_port   = 443
@@ -116,8 +142,9 @@ resource "aws_instance" "capstoneawsdocker" {
 
     user        = "ec2-user"
 
-    private_key = file("sambo-key.pem")
+    private_key = "${file("sambo-key.pem")}"
 
+    timeout = "4m"
   }
 
 }
