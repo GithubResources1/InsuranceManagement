@@ -6,4 +6,4 @@ sudo service docker start
 
 sudo usermod -a -G docker ec2-user
 
-docker run -itd -p 8084:8081 samarthrao/insure-me:3.0
+sudo docker run -itd -p 8084:8081 samarthrao/insure-me:3.0

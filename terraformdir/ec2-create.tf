@@ -54,7 +54,7 @@ resource "aws_security_group" "dockersg" {
 
 
 
-resource "aws_key_pair" "sambo-key" {
+resource "aws_key_pair" "sammykey" {
 
     key_name = "sambo-key"
 
@@ -72,7 +72,7 @@ resource "aws_instance" "capstoneawsdocker" {
 
   vpc_security_group_ids = [aws_security_group.dockersg.id]
 
-  key_name      = aws_key_pair.sambo-key.key_name
+  key_name      = aws_key_pair.sammykey.key_name
 
 
 
@@ -116,7 +116,7 @@ resource "aws_instance" "capstoneawsdocker" {
 
     user        = "ec2-user"
 
-    private_key = file("sambo-key")
+    private_key = file("sambo-key.pem")
 
   }
 
