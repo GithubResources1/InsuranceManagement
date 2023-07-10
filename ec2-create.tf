@@ -1,6 +1,6 @@
-resource "aws_security_group" "dockersg" {
+resource "aws_security_group" "dockersgnew" {
 
-  name = "dockersg"
+  name = "dockersgnew"
 
   ingress {
 
@@ -96,7 +96,7 @@ resource "aws_instance" "capstoneawsdocker" {
 
   instance_type = "t2.micro"
 
-  vpc_security_group_ids = [aws_security_group.dockersg.id]
+  vpc_security_group_ids = [aws_security_group.dockersgnew.id]
 
   key_name      = aws_key_pair.sammykey.key_name
 
@@ -142,7 +142,7 @@ resource "aws_instance" "capstoneawsdocker" {
 
     user        = "ec2-user"
 
-    private_key = "${file("sambo-key.pem")}"
+    private_key = file('sambo-key.pem')
 
     timeout = "4m"
   }
