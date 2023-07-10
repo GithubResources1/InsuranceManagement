@@ -142,7 +142,7 @@ resource "aws_instance" "capstoneawsdocker" {
 
     user        = "ec2-user"
 
-    private_key = file('sambo-key.pem')
+    private_key = file("sambo-key.pem")
 
     timeout = "4m"
   }
